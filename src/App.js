@@ -1,9 +1,17 @@
 import Header from './components/Layout/Header'
+import React from "react";
+import Product from "./components/Products/Product";
 
 
 function App() {
   return (
-    <Header></Header>
+      <React.Fragment>
+        <Header/>
+        <main>
+          <Product/>
+        </main>
+      </React.Fragment>
+
   );
 }
 
