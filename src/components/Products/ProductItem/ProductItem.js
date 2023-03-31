@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ProductItem.module.css'
+import ProductItemForm from "./ProductItemForm";
 
 
 const ProductItem = (props) => {
@@ -16,7 +17,7 @@ const ProductItem = (props) => {
                 {formattedPrice}
             </div>
             <div>
-
+                <ProductItemForm/>
             </div>
         </li>
     );

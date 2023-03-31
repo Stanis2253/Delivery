@@ -2,6 +2,7 @@ import React from 'react';
 import PromoText from "./PromoText";
 import ProductList from "./ProductList";
 
+
 const Product = () => {
     return (
         <React.Fragment>
