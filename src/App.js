@@ -1,16 +1,30 @@
 import Header from './components/Layout/Header'
-import React from "react";
+import React, {useState} from "react";
 import Product from "./components/Products/Product";
+import Cart from "./components/Cart/Cart";
+import CartContextProvider from "./Store/CartContextProvider";
 
 
 function App() {
+
+    const [cartIsVisible, setCartIsVisible] = useState(false)
+
+    const showCartHandler = () => {
+        setCartIsVisible(true);
+    }
+
+    const hideCartHandler = () => {
+        setCartIsVisible(false);
+    }
+
   return (
-      <React.Fragment>
-        <Header/>
-        <main>
-          <Product/>
-        </main>
-      </React.Fragment>
+      <CartContextProvider>
+          {cartIsVisible && <Cart onHideCart={hideCartHandler}/>}
+          <Header onShowCart={showCartHandler}/>
+            <main>
+              <Product/>
+            </main>
+      </CartContextProvider>
 
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from "../UI/Card";
 import ProductItem from "./ProductItem/ProductItem";
+import styles from "./ProductsList.module.css";
 
 const Products = [
     {
@@ -35,7 +36,7 @@ const ProductList = () => {
     const productsList = Products.map(p => <ProductItem key={p.id} name={p.name} description ={p.description} price={p.price}/>)
         return (
 
-        <section>
+        <section className={styles.product}>
             <Card>
                 <ul>
                     {productsList}
